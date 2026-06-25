@@ -1,0 +1,176 @@
+body{
+    background:#f3f4f6;
+    font-family:Arial, sans-serif;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    width:80%;
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.resume-container{
+    width:80%;
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.header{
+    text-align:center;
+    padding-bottom:15px;
+    margin-bottom:25px;
+}
+
+.header h1{
+    margin:0;
+    color:#111827;
+}
+
+.contact-info{
+    margin-top:10px;
+}
+
+.contact-info span{
+    margin:0 15px;
+    color:#4b5563;
+}
+
+.section{
+    margin-bottom:25px;
+}
+
+.section h2{
+    border-bottom:1px solid #d1d5db;
+    padding-bottom:5px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.profile-pic{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 15px auto;
+}
+
+/* ========================= */
+/* MODERN BLUE TEMPLATE */
+/* ========================= */
+
+.modern{
+    border-top:8px solid #2563eb;
+}
+
+.modern .section h2{
+    color:#2563eb;
+}
+
+.modern .profile-pic{
+    border:4px solid #2563eb;
+}
+
+/* ========================= */
+/* PROFESSIONAL BLACK */
+/* ========================= */
+
+.professional{
+    border-top:8px solid #111827;
+}
+
+.professional .section h2{
+    color:#111827;
+}
+
+.professional .profile-pic{
+    border:4px solid #111827;
+}
+
+/* ========================= */
+/* CREATIVE GREEN */
+/* ========================= */
+
+.creative{
+    border-top:8px solid #16a34a;
+}
+
+.creative .section h2{
+    color:#16a34a;
+}
+
+.creative .profile-pic{
+    border:4px solid #16a34a;
+}
+/* CREATIVE SIDEBAR TEMPLATE */
+
+.creative-layout{
+    display:flex;
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.sidebar{
+    width:30%;
+    background:#16a34a;
+    color:white;
+    padding:20px;
+}
+
+.sidebar .profile-pic{
+    border:4px solid white;
+}
+
+.sidebar h2{
+    color:white;
+    border-bottom:1px solid white;
+    padding-bottom:5px;
+}
+
+.main-content{
+    width:70%;
+    padding:30px;
+}
+
+.main-content h2{
+    color:#16a34a;
+}

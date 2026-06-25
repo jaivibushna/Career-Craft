@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Resume Details</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="resume-container">
+
+    <h1>{{ resume[1] }}</h1>
+
+    <p><b>Email:</b> {{ resume[2] }}</p>
+    <p><b>Phone:</b> {{ resume[3] }}</p>
+
+    <p><b>GitHub:</b> {{ resume[4] }}</p>
+    <p><b>LinkedIn:</b> {{ resume[5] }}</p>
+
+    <hr>
+
+    <h2>Professional Summary</h2>
+    <p>{{ resume[6] }}</p>
+
+    <h2>Skills</h2>
+    <p>{{ resume[7] }}</p>
+
+    <h2>Education</h2>
+    <p>{{ resume[8] }}</p>
+
+    <h2>Projects</h2>
+    <p>{{ resume[9] }}</p>
+
+    <h2>Experience</h2>
+    <p>{{ resume[10] }}</p>
+
+    <h2>Certifications</h2>
+    <p>{{ resume[11] }}</p>
+
+</div>
+
+</body>
+</html>

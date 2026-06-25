@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Saved Resumes</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Saved Resumes</h1>
+     <form method="GET" action="/saved_resumes">
+
+    <input type="text"
+           name="search"
+           placeholder="Search by name..."
+           value="{{ search }}">
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+<br>
+
+    <table border="1" width="100%">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>View</th>
+            <th>Edit</th>
+	    <th>Delete</th>
+        </tr>
+
+        {% for resume in resumes %}
+
+        <tr>
+
+            <td>{{ resume[0] }}</td>
+            <td>{{ resume[1] }}</td>
+            <td>{{ resume[2] }}</td>
+
+           
+    <td>
+    <a href="/view_resume/{{ resume[0] }}">
+        View
+    </a>
+    </td>
+
+    <td>
+    <a href="/edit_resume/{{ resume[0] }}">
+        Edit
+    </a>
+    </td>
+
+    <td>
+    <a href="/delete_resume/{{ resume[0] }}"
+       onclick="return confirm('Delete this resume?')">
+       Delete
+    </a>
+    </td>       
+    </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

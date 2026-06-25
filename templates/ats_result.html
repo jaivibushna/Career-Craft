@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>ATS Analysis</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="resume-container">
+
+    <h1>ATS Resume Analysis</h1>
+
+    <h2>ATS Score: {{ score }}/100</h2>
+
+    <h2>Detected Keywords</h2>
+
+    <ul>
+        {% for item in found_keywords %}
+            <li>✓ {{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Missing Keywords</h2>
+
+    <ul>
+        {% for item in missing_keywords %}
+            <li>✗ {{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+
+    <a href="/">
+        <button>Build Another Resume</button>
+    </a>
+
+</div>
+
+</body>
+</html>
