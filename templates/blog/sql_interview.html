@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+SQL Interview Questions
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <h1>SQL Interview Questions for Freshers</h1>
+
+    <p>
+        Learn the most frequently asked SQL interview questions with simple explanations.
+    </p>
+
+</section>
+
+<div class="container">
+
+    <h2>1. What is SQL?</h2>
+
+    <p>
+        SQL (Structured Query Language) is a standard language used to create,
+        retrieve, update, and manage data in relational databases.
+    </p>
+
+    <h2>2. What is the difference between DELETE, TRUNCATE, and DROP?</h2>
+
+    <table>
+
+        <tr>
+            <th>DELETE</th>
+            <th>TRUNCATE</th>
+            <th>DROP</th>
+        </tr>
+
+        <tr>
+            <td>Removes selected rows</td>
+            <td>Removes all rows</td>
+            <td>Deletes the entire table</td>
+        </tr>
+
+    </table>
+
+    <h2>3. What is a Primary Key?</h2>
+
+    <p>
+        A Primary Key uniquely identifies each record in a table.
+        It cannot contain NULL values or duplicates.
+    </p>
+
+    <h2>4. What is a Foreign Key?</h2>
+
+    <p>
+        A Foreign Key creates a relationship between two database tables.
+    </p>
+
+    <h2>5. Difference between WHERE and HAVING?</h2>
+
+    <ul>
+
+        <li>WHERE filters rows before grouping.</li>
+
+        <li>HAVING filters grouped results after GROUP BY.</li>
+
+    </ul>
+
+    <h2>Common SQL Commands</h2>
+
+    <ul>
+
+        <li>SELECT</li>
+
+        <li>INSERT</li>
+
+        <li>UPDATE</li>
+
+        <li>DELETE</li>
+
+        <li>CREATE</li>
+
+        <li>ALTER</li>
+
+        <li>DROP</li>
+
+    </ul>
+
+    <h2>Interview Tips</h2>
+
+    <ul>
+
+        <li>Practice writing SQL queries.</li>
+
+        <li>Understand joins thoroughly.</li>
+
+        <li>Learn normalization concepts.</li>
+
+        <li>Know aggregate functions.</li>
+
+        <li>Practice database design basics.</li>
+
+    </ul>
+
+</div>
+
+{% endblock %}

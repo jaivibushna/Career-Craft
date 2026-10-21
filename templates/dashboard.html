@@ -1,59 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends "base.html" %}
 
-    <title>Dashboard</title>
+{% block title %}
+Dashboard
+{% endblock %}
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
-
-</head>
-
-<body>
+{% block content %}
 
 <div class="container">
 
     <h1>Welcome {{ username }}</h1>
 
-    <hr>
+    <p>
+        Manage your resumes and build professional ATS-friendly resumes.
+    </p>
+    <div class="dashboard-cards">
 
-    <h2>Total Resumes Created</h2>
+    <div class="card">
+        <h2>15+</h2>
+        <p>Resume Templates</p>
+    </div>
 
-    <h3>{{ total_resumes }}</h3>
+    <div class="card">
+        <h2>ATS</h2>
+        <p>Friendly Builder</p>
+    </div>
 
-    <hr>
+    <div class="card">
+        <h2>PDF</h2>
+        <p>Instant Download</p>
+    </div>
 
-    <h2>Recent Resumes</h2>
+</div>
 
-    <ul>
+    <br>
 
-        {% for resume in recent_resumes %}
-
-            <li>{{ resume[0] }}</li>
-
-        {% endfor %}
-
-    </ul>
-
-    <hr>
-
-    <a href="/">
-        <button>Create Resume</button>
-    </a>
+    <a href="/">Create Resume</a>
 
     <br><br>
 
     <a href="/saved_resumes">
-        <button>My Saved Resumes</button>
+        My Saved Resumes
     </a>
 
     <br><br>
 
     <a href="/logout">
-        <button>Logout</button>
+        Logout
     </a>
 
 </div>
 
-</body>
-</html>
+{% endblock %}

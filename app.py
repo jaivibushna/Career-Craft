@@ -4,9 +4,10 @@ from io import BytesIO
 import sqlite3
 import os
 from werkzeug.utils import secure_filename
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = "resume_builder_secret_key"
+app.secret_key = os.environ.get("SECRET_KEY")
 
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -20,6 +21,8 @@ def home():
 @app.route('/preview', methods=['POST'])
 def preview():
 
+    if 'user_id' not in session:
+        return redirect('/login')
     name = request.form['name']
     email = request.form['email']
     phone = request.form['phone']
@@ -443,6 +446,7 @@ def register():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
+        hashed_password = generate_password_hash(password)
 
         conn = sqlite3.connect("resumes.db")
         cursor = conn.cursor()
@@ -450,7 +454,7 @@ def register():
         cursor.execute("""
         INSERT INTO users(username,email,password)
         VALUES(?,?,?)
-        """, (username, email, password))
+        """, (username, email, hashed_password))
 
         conn.commit()
         conn.close()
@@ -535,6 +539,62 @@ def logout():
     session.clear()
 
     return redirect('/login')
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+
+    if request.method == 'POST':
+
+        name = request.form['name']
+        email = request.form['email']
+        subject = request.form['subject']
+        message = request.form['message']
+
+        print("New Contact Message")
+        print(name)
+        print(email)
+        print(subject)
+        print(message)
+
+        return render_template(
+            "contact.html",
+            success="Your message has been sent successfully!"
+        )
+
+    return render_template("contact.html")
+@app.route('/privacy')
+def privacy():
+    return render_template("privacy.html")
+@app.route('/terms')
+def terms():
+    return render_template("terms.html")
+@app.route("/blog")
+def blog():
+    return render_template("blog.html")
+@app.route("/blog/ats-resume")
+def ats_resume():
+    return render_template("blog/ats_resume.html")
+@app.route("/blog/hr-interview")
+def hr_interview():
+    return render_template("blog/hr_interview.html")
+@app.route("/blog/python-interview")
+def python_interview():
+    return render_template("blog/python_interview.html")
+@app.route("/blog/java-interview")
+def java_interview():
+    return render_template("blog/java_interview.html")
+@app.route("/blog/sql-interview")
+def sql_interview():
+    return render_template("blog/sql_interview.html")
+@app.route("/blog/web-interview")
+def web_interview():
+    return render_template("blog/web_interview.html")
+@app.route("/blog/career-tips")
+def career_tips():
+    return render_template("blog/career_tips.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

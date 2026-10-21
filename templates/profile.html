@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>My Profile</h1>
+
+    <div class="profile-card">
+
+        <h2>{{ user.name }}</h2>
+
+        <p><strong>Email:</strong> {{ user.email }}</p>
+
+        <p><strong>Phone:</strong> {{ user.phone }}</p>
+
+        <p><strong>College:</strong> {{ user.college }}</p>
+
+        <p><strong>Degree:</strong> {{ user.degree }}</p>
+
+        <p><strong>Graduation Year:</strong> {{ user.graduation_year }}</p>
+
+        <p><strong>Skills:</strong> {{ user.skills }}</p>
+
+        <p><strong>LinkedIn:</strong> {{ user.linkedin }}</p>
+
+        <p><strong>GitHub:</strong> {{ user.github }}</p>
+
+        <br>
+
+        <a href="/edit_profile" class="btn-primary">
+            Edit Profile
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

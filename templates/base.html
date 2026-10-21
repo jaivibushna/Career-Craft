@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>{% block title %}CareerCraft{% endblock %}</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        CareerCraft
+    </div>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/dashboard">Dashboard</a></li>
+
+        <li><a href="/profile">Profile</a></li>
+
+        <li><a href="/saved_resumes">My Resumes</a></li>
+
+        <li><a href="/blog">Blog</a></li>
+
+        <li><a href="/about">About</a></li>
+
+        <li><a href="/contact">Contact</a></li>
+
+        <li><a href="/logout">Logout</a></li>
+
+    </ul>
+
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="footer">
+
+    ...
+
+    <a href="/about">About</a><br>
+
+    <a href="/contact">Contact</a><br>
+
+    <a href="/privacy">Privacy Policy</a><br>
+
+    <a href="/terms">Terms & Conditions</a>
+
+</footer>
+<footer class="footer">
+
+    <p>
+        © 2026 CareerCraft. All Rights Reserved.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="/privacy">Privacy Policy</a>
+
+        <a href="/terms">Terms & Conditions</a>
+
+        <a href="/about">About</a>
+
+        <a href="/contact">Contact</a>
+
+    </div>
+
+</footer>
+</body>
+</html>
