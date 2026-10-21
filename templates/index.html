@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends "base.html" %}
 
-    <title>Professional Resume Builder</title>
+{% block title %}CareerCraft | Professional Resume Builder{% endblock %}
 
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='style.css') }}">
+{% block content %}
 
-</head>
-
-<body>
-
-  <section class="hero">
+<section class="hero">
 
     <div class="hero-content">
 
@@ -38,7 +31,7 @@
 
 </section>
 
-    <section id="features" class="features">
+<section id="features" class="features">
 
     <h2>Why Choose CareerCraft?</h2>
 
@@ -75,8 +68,8 @@
     </div>
 
 </section>
-    
-    <section class="stats">
+
+<section class="stats">
 
     <div class="stat-box">
         <h2>500+</h2>
@@ -100,7 +93,7 @@
 
 </section>
 
-    <section class="testimonials">
+<section class="testimonials">
 
     <h2>What Our Users Say</h2>
 
@@ -112,7 +105,6 @@
             </p>
 
             <h4>Rahul Sharma</h4>
-
             <span>Software Engineer</span>
         </div>
 
@@ -122,7 +114,6 @@
             </p>
 
             <h4>Priya Nair</h4>
-
             <span>College Student</span>
         </div>
 
@@ -132,7 +123,6 @@
             </p>
 
             <h4>Arjun Patel</h4>
-
             <span>UI Designer</span>
         </div>
 
@@ -140,9 +130,8 @@
 
 </section>
 
-
 <div class="container" id="resume-form">
-    
+
     <h1>Professional Resume Builder</h1>
 
     <form action="/preview"
@@ -166,21 +155,11 @@
 
         <label>Select Resume Template</label>
 
-<select name="template">
-
-    <option value="professional">
-        Professional
-    </option>
-
-    <option value="modern">
-        Modern
-    </option>
-
-    <option value="creative">
-        Creative
-    </option>
-
-</select>
+        <select name="template">
+            <option value="professional">Professional</option>
+            <option value="modern">Modern</option>
+            <option value="creative">Creative</option>
+        </select>
 
         <label>Profile Photo</label>
         <input type="file" name="photo" accept="image/*">
@@ -203,13 +182,9 @@
         <label>Certifications</label>
         <textarea name="certifications" rows="4"></textarea>
 
-        <button type="submit">
-            Generate Resume
-        </button>
+        <button type="submit">Generate Resume</button>
 
     </form>
 
 </div>
-
-</body>
-</html>
+{% endblock %}
